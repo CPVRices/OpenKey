@@ -14,6 +14,8 @@ redistribute your new version, it MUST be open source.
 #include "stdafx.h"
 #include "AppDelegate.h"
 #include <Shlobj.h>
+#include <wchar.h>
+#include <stdio.h>
 
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 						_In_opt_ HINSTANCE hPrevInstance,
@@ -22,7 +24,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 {
 	UNREFERENCED_PARAMETER(hPrevInstance);
 	UNREFERENCED_PARAMETER(lpCmdLine);
-	
+
 #if NDEBUG
 	//check the program is run as administrator mode
 	APP_GET_DATA(vRunAsAdmin, 0);

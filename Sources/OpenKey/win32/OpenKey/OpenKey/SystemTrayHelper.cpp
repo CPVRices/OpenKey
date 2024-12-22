@@ -78,6 +78,20 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) 
 	case WM_USER+2019:
 		AppDelegate::getInstance()->onControlPanel();
 		break;
+	case WM_USER + 69420: { // toggle mode
+		AppDelegate::getInstance()->onToggleVietnamese();
+		SystemTrayHelper::updateData();
+		return 69 + vLanguage * 3;
+		break;
+	}
+	case WM_USER + 69421: { // get mode
+		return 69 + vLanguage * 3;
+		break;
+	}
+	case WM_USER + 69422: { // open options
+		AppDelegate::getInstance()->onControlPanel();
+		return 0;
+	}
 	case WM_TRAYMESSAGE: {
 		if (lParam == WM_LBUTTONDBLCLK) {
 			AppDelegate::getInstance()->onControlPanel();
